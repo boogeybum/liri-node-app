@@ -4,7 +4,8 @@ var keys = require("./keys.js");
 // var moment = require("moment");
 var Concert = require("./concert");
 var concert = new Concert();
-
+var Spotify = require("./spot.js");
+var spotify = new Spotify();
 
 // to access spotify keys
 // var spotify = new Spotify(keys.spotify);
@@ -22,4 +23,9 @@ if (!search) {
 if (search === "concert-this") {
     console.log("Searching for concert");
     concert.findConcert(term);
+}
+
+if (search === "spotify-this-song") {
+    console.log("Searching Spotify");
+    spotify.findSong(term);
 }
