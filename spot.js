@@ -15,13 +15,13 @@ var ArtistInfo = function() {
         spotify
         .search({ type: 'track', query: song })
         .then(function(response) {
-            // var jsonData = response.data;
+            var jsonData = response.data;
 
             var artistData = [
-                "Artist: " + response.artists,
-                "Song: " + response.name,
-                "Link: " + response.preview_url,
-                "Album: " + response.album
+                "Artist: " + jsonData.artists,
+                "Song: " + jsonData.name,
+                "Link: " + jsonData.preview_url,
+                "Album: " + jsonData.album
             ].join("\n\n");
             console.log("Searching for " + song);
           console.log(artistData);
