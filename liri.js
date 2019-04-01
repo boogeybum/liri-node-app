@@ -17,10 +17,6 @@ var search = process.argv[2];
 // join remaining arguments to deal with spaces
 var term = process.argv.slice(3).join(" ");
 
-//default if no search term provided
-if (!search) {
-    search = "concert-this";
-}
 
 if (search === "concert-this") {
     console.log("Searching for concert");
@@ -28,11 +24,17 @@ if (search === "concert-this") {
 }
 
 if (search === "spotify-this-song") {
+    if (!term) {
+        term = "The Sign";
+    }
     console.log("Searching Spotify");
     spotify.findSong(term);
 }
 
 if (search === "movie-this") {
+    if (!term) {
+        term = "Mr Nobody";
+    }
     console.log("Searching Omdb");
     movie.findMovie(term);
 }
