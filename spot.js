@@ -15,7 +15,7 @@ var ArtistInfo = function() {
         spotify
         .search({ type: 'track', query: song })
         .then(function(response) {
-            var jsonData = response.data;
+            var jsonData = response;
 
             var artistData = [
                 "Artist: " + jsonData.artists,
