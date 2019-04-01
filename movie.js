@@ -24,7 +24,7 @@ var Movie = function() {
 
             fs.appendFile("log.txt", movieData + divider, function(err) {
                 if (err) throw err;
-                console.log(response);
+                console.log(jsonData);
             });
         });
 

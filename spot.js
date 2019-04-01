@@ -5,7 +5,7 @@ var fs = require("fs");
 
 
 // spotify keys are linked 
-var spotify = new Spotify(keys);
+var spotify = new Spotify(keys.spotify);
 
 // Create song constructor
 var ArtistInfo = function() {
@@ -24,7 +24,7 @@ var ArtistInfo = function() {
                 "Album: " + jsonData.album
             ].join("\n\n");
             console.log("Searching for " + song);
-          console.log(artistData);
+          console.log(jsonData);
 
           // append search results to a log.txt file
           fs.appendFile("log.txt", artistData + divider, function(err) {
