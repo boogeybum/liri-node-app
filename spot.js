@@ -3,10 +3,9 @@ var keys = require("./keys.js");
 
 var fs = require("fs");
 
-var spotify = new Spotify({
-    id: "5df9e172246e4c7894dc1d457cef16dd",
-    secret: "451035aa8e134ec3babf8431cb7f5b31"
-  });
+
+// spotify keys are linked 
+var spotify = new Spotify(keys);
 
 // Create song constructor
 var ArtistInfo = function() {
