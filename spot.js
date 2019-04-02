@@ -13,9 +13,13 @@ var ArtistInfo = function() {
 
     this.findSong = function(song) {
         spotify
-        .search({ type: 'track', query: song })
+        .search({ type: 'track', query: song, limit: 1 })
         .then(function(response) {
-            var jsonData = response;
+          console.log('response');
+          console.log(response.tracks);
+            var jsonData = response.tracks;
+
+
 
             var artistData = [
                 "Artist: " + jsonData.artists,
@@ -24,7 +28,7 @@ var ArtistInfo = function() {
                 "Album: " + jsonData.album
             ].join("\n\n");
             console.log("Searching for " + song);
-          console.log(jsonData);
+          console.log(artistData);
 
           // append search results to a log.txt file
           fs.appendFile("log.txt", artistData + divider, function(err) {
